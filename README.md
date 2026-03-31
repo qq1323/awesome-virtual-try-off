@@ -88,6 +88,7 @@ Unlike traditional Virtual Try-On (VTON) techniques, which focus on dressing a m
   [[paper]](https://arxiv.org/abs/2404.14162) 
   [[code]](https://github.com/xiangji-ai/fldm-vton) 
   vtoff task is included in the loss function for training a vton model, vtoff was not the focus of the paper, nor was a stand-alone task introduced.
+  论文中构建了一个衣物展平网络，但由于需要使用平铺衣物图的mask作为辅助，难以单独认为是一个vtoff任务的模型。
 </sup>
 
 <sup>[2024-04-26]</sup>
@@ -192,6 +193,7 @@ garment synthesis with precise control over silhouette, color, and logo placemen
   [[project]](https://temu-vtoff-page.github.io/)
   [[code]](https://github.com/davidelobba/TEMU-VTOFF)
   1st dual-DiT model for VTOFF with multi-garment support, built on a finetuned StableDiffusion-v3 with modified attention. It accepts images, text, or masks as input, enabling multi-category garment handling.
+  TEMU模型，但在issue(https://github.com/davidelobba/TEMU-VTOFF/issues/4)有人提出生成效果的问题，暂时无人回应
 </sup>
 
 <sup>[2025-08-06]</sup>
