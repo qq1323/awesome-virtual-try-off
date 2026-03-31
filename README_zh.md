@@ -56,21 +56,21 @@ Unlike traditional Virtual Try-On (VTON) techniques, which focus on dressing a m
 ***ARMANI: Part-level Garment-Text Alignment for Unified Cross-Modal Fashion Design***\
 <sup>
   [[paper]](https://arxiv.org/abs/2208.05621) 
-  text-to-garment generation.
+  文本到服装平铺图的生成。同时支持服装线稿和局部纹理到服装平铺图的生成。
 </sup>
 
 <sup>[2023-08-15]</sup> 
 ***SGDiff: A Style Guided Diffusion Model for Fashion Synthesis***\
 <sup>
   [[paper]](https://arxiv.org/abs/2308.07605)
-  finetuned GLIDE to generate garment images from "text" (garment attributes) + "style image".
+  finetuned GLIDE to generate garment images from "text" (garment attributes) + "style image". 支持256*256分辨率图像的生成。
 </sup>
 
 <sup>[2023-08-22]</sup> 
 ***DiffCloth: Diffusion Based Garment Synthesis and Manipulation via Structural Cross-modal Semantic Alignment***\
 <sup>
   [[paper]](https://arxiv.org/abs/2308.11206) 
-  finetuned StableDiffusion for targeting garment synthesis and manipulation.
+  finetuned StableDiffusion for targeting garment synthesis and manipulation. 实现了文本到衣物图的生成以及衣物图的编辑，如裤形变更、颜色变更、领型变更等。
 </sup>
 
 <sup>[2024-01-29]</sup> 
@@ -95,7 +95,7 @@ Unlike traditional Virtual Try-On (VTON) techniques, which focus on dressing a m
 ***FashionSD-X: Multimodal Fashion Garment Synthesis using Latent Diffusion***\
 <sup>
   [[paper]](https://arxiv.org/abs/2404.18591v1)
-  finetuned SD-v1.5 with ControlNet to generate garments from text + sketch image.
+  finetuned SD-v1.5 with ControlNet to generate garments from text + sketch image.文本和线稿的衣物生成。
 </sup>
 
 <sup>[2024-11-25]</sup>
@@ -105,6 +105,7 @@ Unlike traditional Virtual Try-On (VTON) techniques, which focus on dressing a m
   [[project]](https://omnious.github.io/BootComp/)
   [[code]](https://github.com/omnious/BootComp)
   generated garment images from segmented garments—extracted from reference images—to construct a dataset for training a multi-garment VTON model.
+  输入为Masked衣物区域，生成完整的衣物，未给出相关的指标，但从论文中的生成效果看很有参考
 </sup>
 
 <sup>[2024-11-27]</sup>
@@ -113,13 +114,13 @@ Unlike traditional Virtual Try-On (VTON) techniques, which focus on dressing a m
   [[paper]](https://huggingface.co/papers/2411.18350)
   [[project]](https://rizavelioglu.github.io/tryoffdiff)
   [[code]](https://github.com/rizavelioglu/tryoffdiff/)
-  coined the term Virtual Try-Off (VTOFF), formally introduced the task and introduced the baselines.
+  coined the term Virtual Try-Off (VTOFF), formally introduced the task and introduced the baselines.定义了VTOFF
 </sup>
 
 <sup>[2024-11-29]</sup>
 ***RAGDiffusion: Faithful Cloth Generation via External Knowledge Assimilation***\
 <sup>
-  [[paper]](https://arxiv.org/abs/2411.19528)
+  [[paper]](https://arxiv.org/abs/2411.19528)将RAG引入衣物图生成，在SD-UNet上实现了高精确的生成。
 </sup>
 
 <sup>[2024-12-11]</sup>
@@ -127,7 +128,7 @@ Unlike traditional Virtual Try-On (VTON) techniques, which focus on dressing a m
 <sup>
   [[paper]](https://arxiv.org/abs/2412.08573)
   [[code]](https://github.com/ixarchakos/try-off-anyone)
-  finetuned Stable Diffusion-v1.5-inpainting for vtoff in CatVTON-style.
+  finetuned Stable Diffusion-v1.5-inpainting for vtoff in CatVTON-style. 去除了文本交叉注意力计算的块来提高速度。
 </sup>
 
 <sup>[2024-12-16]</sup>
@@ -141,7 +142,9 @@ Unlike traditional Virtual Try-On (VTON) techniques, which focus on dressing a m
 ***Enhancing Virtual Try-On with Synthetic Pairs and Error-Aware Noise Scheduling***\
 <sup>
   [[paper]](https://arxiv.org/abs/2501.04666)
-  used VTOFF to generate synthetic pairs to enrich VTON training dataset. Trained a U-Net model for warping latent features.
+  [[code]](https://github.com/NannanLi999/earsb)
+  used VTOFF to generate synthetic pairs to enrich VTON training dataset. Trained a U-Net model for warping latent features. 
+  构建了一个基于Unet和GAN的模型，输入为masked的衣物目标。
 </sup>
 
 <sup>[2025-01-27]</sup>
@@ -151,9 +154,9 @@ Unlike traditional Virtual Try-On (VTON) techniques, which focus on dressing a m
   [[project]](https://logn-2024.github.io/Any2anyTryonProjectPage/)
   [[code]](https://github.com/logn-2024/Any2anyTryon)
   1st unified model targeting both VTON and VTOFF. 
-
+  无特殊的输入要求，
   需要注意的issue: https://github.com/logn-2024/Any2anyTryon/issues/11 ；
-  对结果影响很大，单独使用 t-shirt 这种简单的类别和默认参数时生成的结果比例是异常的，需要特别注意
+  对结果影响很大，单独使用 t-shirt 这种简单的类别和默认参数时生成的结果比例是异常的，需要特别注意。
 </sup>
 
 <sup>[2025-03-07]</sup>
@@ -170,6 +173,7 @@ Unlike traditional Virtual Try-On (VTON) techniques, which focus on dressing a m
   [[project]](https://rizavelioglu.github.io/tryoffdiff)
   [[code]](https://github.com/rizavelioglu/tryoffdiff/)
   1st VTOFF model supporting multiple garment reconstruction. Finetuned StableDiffusion-v1.4 (similar to TryOffDiff) and trained a class embedding for multi-garment support.
+  TryoffDiff同团队工作，TileGAN是更早的支持多类别的实现，MGT是基于类别的实现，其他相关的论文基于mask来实现。
 </sup>
 
 <sup>[2025-04-17]</sup>
@@ -179,6 +183,7 @@ Unlike traditional Virtual Try-On (VTON) techniques, which focus on dressing a m
   [[project]](https://revive234.github.io/imaggarment.github.io/)
   [[code]](https://github.com/muzishen/IMAGGarment-1)
 garment synthesis with precise control over silhouette, color, and logo placement (3 inputs). Incorporates a tower architecure with SD-1.5 for coarse generation followed by a fine-grained approach utilizing SD-1.5-inpaint.
+线稿到衣物。
 </sup>
 
 <sup>[2025-05-26]</sup>
@@ -187,6 +192,8 @@ garment synthesis with precise control over silhouette, color, and logo placemen
   [[paper]](https://arxiv.org/abs/2505.20275)
   [[code]](https://github.com/PKU-YuanGroup/ImgEdit)
   trained an image editing model using Vision-Language Model to process a reference image and editing prompt, targeting multiple tasks including VTOFF.
+  
+  extract任务：Extract the {cloth_type} from the person, ensure the image without any background distractions.
 </sup>
 
 <sup>[2025-05-27]</sup>
@@ -196,6 +203,7 @@ garment synthesis with precise control over silhouette, color, and logo placemen
   [[project]](https://temu-vtoff-page.github.io/)
   [[code]](https://github.com/davidelobba/TEMU-VTOFF)
   1st dual-DiT model for VTOFF with multi-garment support, built on a finetuned StableDiffusion-v3 with modified attention. It accepts images, text, or masks as input, enabling multi-category garment handling.
+  
   TEMU模型，但在issue(https://github.com/davidelobba/TEMU-VTOFF/issues/4)有人提出生成效果的问题，暂时无人回应
 </sup>
 
@@ -203,7 +211,7 @@ garment synthesis with precise control over silhouette, color, and logo placemen
 ***Two-Way Garment Transfer: Unified Diffusion Framework for Dressing and Undressing Synthesis***\
 <sup>
   [[paper]](https://arxiv.org/abs/2508.04551)
-  unified framework (TWGTM) targeting both VTON & VTOFF.
+  unified framework (TWGTM) targeting both VTON & VTOFF. 单独从图中效果和指标看，效果较好，指标几乎和voost对齐
 </sup>
 
 <sup>[2025-08-06]</sup>
@@ -211,7 +219,7 @@ garment synthesis with precise control over silhouette, color, and logo placemen
 <sup>
   [[paper]](https://arxiv.org/abs/2508.04559)
   [[project]](https://onemodelforall.github.io/)
-  unified framework (OMFA) targeting both VTON & VTOFF.
+  unified framework (OMFA) targeting both VTON & VTOFF. 从结构看类似于CatVton结构，依赖SMPL-X姿态
 </sup>
 
 <sup>[2025-08-06]</sup>
@@ -219,7 +227,7 @@ garment synthesis with precise control over silhouette, color, and logo placemen
 <sup>
   [[paper]](https://arxiv.org/abs/2508.04825)
   [[project]](https://nxnai.github.io/Voost/)
-  unified framework (Voost) targeting both VTON & VTOFF.
+  unified framework (Voost) targeting both VTON & VTOFF.从Demo测试效果看，生成质量很高而且清晰度也很高。提供了一种相互促进的机制。
 </sup>
 
 <sup>[2025-11-19]</sup>
@@ -227,26 +235,26 @@ garment synthesis with precise control over silhouette, color, and logo placemen
 <sup>
   [[paper]](https://arxiv.org/abs/2511.15831v2)
   [[code]](https://github.com/zwplus/UniFit)
-  a universal framework driven by Multimodal Large Language Model.
+  a universal framework driven by Multimodal Large Language Model. 论文的主要目标是统一多任务学习，所以并未在VTOFF上进行过多的描述。
 </sup>
 
 <sup>[2026-01-05]</sup>
 ***AlignVTOFF: Texture-Spatial Feature Alignment for High-Fidelity Virtual Try-Off***\
 <sup>
   [[paper]](https://arxiv.org/abs/2601.02038)
-  dual-U-Net pipeline trained with a loss combining regular diffusion loss + LPIPS.
+  dual-U-Net pipeline trained with a loss combining regular diffusion loss + LPIPS. 
 </sup>
 
 <sup>[2026-03-10]</sup>
 ***BridgeDiff: Bridging Human Observations and Flat-Garment Synthesis for Virtual Try-Off***\
 <sup>
   [[paper]](https://arxiv.org/abs/2603.09236)
-  dual-U-Net framework based on Stable-Diffusion-v1.5.
+  dual-U-Net framework based on Stable-Diffusion-v1.5. 使用轻量级模型达到甚至超过了dit模型的效果
 </sup>
 
 <sup>[2026-03-23]</sup>
 ***Dress-ED: Instruction-Guided Editing for Virtual Try-On and Try-Off***\
 <sup>
   [[paper]](https://arxiv.org/abs/2603.22607)
-  introduced a synthetic benchmark Dress Editing Dataset (Dress-ED) and Dress Editing Model (Dress-EM) targeting both VTON and VTOFF.
+  introduced a synthetic benchmark Dress Editing Dataset (Dress-ED) and Dress Editing Model (Dress-EM) targeting both VTON and VTOFF. 提供了6种时尚相关任务。
 </sup>
