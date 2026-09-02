@@ -37,6 +37,20 @@ Unlike traditional Virtual Try-On (VTON) techniques, which focus on dressing a m
   experimented with task, see Figure 16.
 </sup>
 
+<sup>[2026-04-09]</sup> 
+***FIT: A Large-Scale Dataset for Fit-Aware Virtual Try-On***\
+<sup>
+  [[paper]](https://arxiv.org/abs/2604.08526)
+  used Nano Banana Pro as VTOFF method to generate paired dataset.
+</sup>
+
+<sup>[2026-06-11]</sup> 
+***A VLM-based framework for evaluating garment consistency in AI-generated images based on DeLong’s theory***\
+<sup>
+  [[paper]](https://link.springer.com/article/10.1186/s40691-026-00475-w)
+  developed a garment-specific evaluation framework, surpassing traditional eval metrics.
+</sup>
+
 ### Papers <sub><sup>(directly related to VTOFF)</sup></sub>
 <sup>[2020-05-08]</sup> 
 ***TileGAN: category-oriented attention-based high-quality tiled clothes generation from dressed person***\
@@ -267,4 +281,11 @@ trained a VTOFF model for cyclic data generation pipeline.
 <sup>
   [[paper]](https://arxiv.org/abs/2604.08716)
   introduced a Dual-UNet Diffusion Model for VTOFF, thoroughly ablating design choices in generation backbones, conditioning (masks, inputs, semantics), and training strategies/losses to reconstruct canonical garments from draped images.
+</sup>
+
+<sup>[2026-07-09]</sup>
+***MMTryOff: multi-category virtual try-off with mask-free inference via diffusion transformer***\
+<sup>
+  [[paper]](https://link.springer.com/article/10.1007/s00530-026-02480-x)
+  LoRA training with FLUX.1-dev, on newly proposed VITOFF-HD dataset, incorporating frequency loss and mask loss during training. CatVTON-style training. No code, no dataset available.
 </sup>
