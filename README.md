@@ -287,3 +287,10 @@ trained a VTOFF model for cyclic data generation pipeline.
   [[paper]](https://link.springer.com/article/10.1007/s00530-026-02480-x)
   LoRA training with FLUX.1-dev, on newly proposed VITOFF-HD dataset, incorporating frequency loss and mask loss during training. CatVTON-style training. No code, no dataset available.
 </sup>
+
+<sup>[2026-08-29]</sup> 
+***RAGDiffusion++: From Macro-Retrieval to Micro-Fidelity Alignment for Garment Generation***\
+<sup>
+  [[paper]](https://arxiv.org/abs/2608.29280)
+  follow-up to RAGDiffusion: Dual-Image-Stream FLUX + AR-GRPO RL post-training with Garment-RM to recover high-frequency textures (weaves, logos) after RAG’s macro-constraints. Introduces STGarment-Plus.
+</sup>
