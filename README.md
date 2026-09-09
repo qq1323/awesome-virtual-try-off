@@ -1,7 +1,26 @@
 # 🌟 A Curated List of Awesome Virtual Try-Off (VTOFF) Research 🌟
 
-Virtual Try-Off (VTOFF) is a novel computer vision task that extracts standardized, canonical images of garments from single photos of clothed individuals.
-Unlike traditional Virtual Try-On (VTON) techniques, which focus on dressing a model with new garments, VTOFF focuses on recovering the clothing item itself with high fidelity. The task was introduced and the term coined in [TryOffDiff: Virtual-Try-Off via High-Fidelity Garment Reconstruction using Diffusion Models](https://rizavelioglu.github.io/tryoffdiff).
+<table>
+  <tr>
+    <td width="55%" valign="middle">
+      <img src="vton-vs-vtoff.png" alt="VTON vs VTOFF: Masked Ref. I', Garment G, Predicted garment G-hat, Predicted person I-hat, and Reference I">
+    </td>
+    <td width="45%" valign="middle">
+
+**Virtual Try-On (VTON)** takes a **Masked Ref. Image** $\mathrm{I}'$ and a **Garment** $\mathrm{G}$ and synthesizes a dressed person, the **Predicted** $\hat{\mathrm{I}}$.
+
+**Virtual Try-Off (VTOFF)** is the inverse: from a clothed **Reference** $\mathrm{I}$, it reconstructs a canonical **Predicted Garment** $\hat{\mathrm{G}}$.
+
+Each prediction is scored against its ground truth with image similarity metrics: **VTON Loss** compares $\hat{\mathrm{I}}$ to $\mathrm{I}$, and **VTOFF Loss** compares $\hat{\mathrm{G}}$ to $\mathrm{G}$.
+
+The two tasks also form a cycle: the output of one can serve as the input to the other.
+
+VTOFF was introduced and the term coined in [TryOffDiff: Virtual-Try-Off via High-Fidelity Garment Reconstruction using Diffusion Models](https://rizavelioglu.github.io/tryoffdiff).
+
+Figure from [TryOffDiff](https://rizavelioglu.github.io/tryoffdiff).
+    </td>
+  </tr>
+</table>
 
 
 ### Demos
@@ -288,4 +307,11 @@ trained a VTOFF model for cyclic data generation pipeline.
 <sup>
   [[paper]](https://link.springer.com/article/10.1007/s00530-026-02480-x)
   LoRA training with FLUX.1-dev, on newly proposed VITOFF-HD dataset, incorporating frequency loss and mask loss during training. CatVTON-style training. No code, no dataset available.
+</sup>
+
+<sup>[2026-08-29]</sup> 
+***RAGDiffusion++: From Macro-Retrieval to Micro-Fidelity Alignment for Garment Generation***\
+<sup>
+  [[paper]](https://arxiv.org/abs/2608.29280)
+  follow-up to RAGDiffusion: Dual-Image-Stream FLUX + AR-GRPO RL post-training with Garment-RM to recover high-frequency textures (weaves, logos) after RAG’s macro-constraints. Introduces STGarment-Plus.
 </sup>
